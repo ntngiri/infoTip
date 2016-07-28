@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Qunit Testing DashBoard</title>
+<link rel="stylesheet" href="../c/qunit-1.14.0.css">
+<link rel="stylesheet" href="../c/common.css">
+<link rel="stylesheet" href="../c/tooltip.css">
+<script>var qunitTest = {};</script>
+<script src="../j/qunit-1.14.0.js"></script>
+<script src="../j/blanket.min.js"></script>
+<script src="../j/jquery-1.10.2.js"></script>
+<script src="../j/tooltip_v2.js" data-cover></script>
+
+
+
+
+
+<!--<link rel="stylesheet" href="../c/lightBox.css">-->
+
+
+</head>
+<body>
+
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<div class="wrapper" style="width:400px;height:500px">
+	<a href="#" class="targetStyle abcd3 fl" tooltip="1001" style="margin:20px;margin-left:88px">Click for tooltip</a><br/>
+  
+	<a href="#" class="targetStyle abcd0 fl" tooltip="1001" style="margin:50px">Click for tooltip</a><br/>
+
+	<a href="#" class="targetStyle abcd2 fl" tooltip="1001" style="margin:20px">Click for tooltip</a><br/><!--right-->
+
+	<a href="#" class="targetStyle abcd1 fl" tooltip="1001" style="margin:70px 40px 30px 150px">Click for tooltip</a><br/>
+
+	<a href="#" class="targetStyle abcd4 fl" tooltip="1001" style="margin:174px 100px 0px 0px">Click for tooltip</a><br/>
+</div>
+   			<script type="text/javascript">
+   				var tooltipList ={
+		 1001 : 'this is toolTip one. <a href="">This is link inside tooltip</a>this is toolTip one. <a href="">This is link inside tooltip</a><em class=""></em>'
+		};
+   			</script>
+   			<script src="../j/tooltipTest.js"></script>
+</body>
+</html>

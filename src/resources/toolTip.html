@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ToolTip</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="../c/reset.css" />
+<link type="text/css" rel="stylesheet" href="../c/tooltip.css"/>
+<link type="text/css" rel="stylesheet" href="../c/css3_v1.css"/>
+<script src="../j/jquery-1.10.2.js"></script> 
+<script src="../j/tooltip_v2.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="post.html">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<div class="wrapper">
+	<a href="javascript:void(0);" class="targetStyle abcd fl" tooltip="1001">Click for tooltip</a><br/>
+    <input type="text"  class="targetStyle abcd fl" id="1" tooltip="1001" />    
+    <a href="javascript:void(0);" class="targetStyle abcd fr" tooltip="1002">Click for tooltip</a><br/>
+    <div style="clear:both;height:300px"></div>    
+    <a href="javascript:void(0);" class="targetStyle abcd fl" tooltip="1003">Click for tooltip</a><br/>
+    <a href="javascript:void(0);" class="targetStyle abcd fr" tooltip="1004">Click for tooltip</a><br/>
+     <div style="clear:both"></div>
+   
+</div>
+ <a href="javascript:void(0);" class="targetStyle abcde fr " tooltip="1005" style="margin-right:100px">Click for tooltip</a>
+ 
+ 
+ <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<script>
+$('document').ready(function(){
+	 var tooltipList ={
+		 1001 : 'this is toolTip one. <a href="">This is link inside tooltip</a>this is toolTip one. <a href="">This is link inside tooltip</a><em class=""></em>',
+		 1002 : 'this is toolTip two<small class="closetooltp"></small><a href="">This is link inside tooltip</a>this is toolTip one. <a href="">This is link inside tooltip</a><em class=""></em> ',
+		 1003 : 'this is toolTip three<br/>this is toolTip thre<em class="" name=""></em> ',
+		 1004 : 'this is toolTip four <small class="closetooltp"></small><em class=""></em> ',
+		 1005 : 'this is toolTip five<br/>this is toolTip fivethis is toolTip five<br/>this is toolTip five<br/> < <small class="closetooltp"></small><em class=""></em> '	 
+		 }
+	
+var ttOptions = {
+	order : ['left','right'],
+		list : tooltipList,
+		'class' : "",
+		dir : "left",
+		tipWidth : 5,
+		tipHeight : 5,
+		
+		wrapper : 'wrapper',
+		open: {
+			event : "mouseover",
+			anim:"bounceInDown,bounceInLeft,bounceInUp,bounceInRight"
+		    },
+		close:{	
+				event : "mouseout",
+				node  : '.closetooltp',
+				anim : 'fadeOut'
+				
+				
+			}		
+	};	
+$('.abcd').tooltip(ttOptions);
+//$('.xyz').tooltip(ttOptions);
+//ttOption.wapper = '.abcd';
+
+var ttOptions2 = {
+		wrapper : 'body'		
+}	
+var mergedopts = $.extend({},ttOptions,ttOptions2 )
+$('.abcde').tooltip(mergedopts);	
+	
+		 
+});
+</script>
+
+
+</body>
+</html>
